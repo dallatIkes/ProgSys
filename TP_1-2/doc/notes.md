@@ -4,7 +4,7 @@
 
 1) On affiche l'arbre des processus à l'aide de la commande ``pstree``, pour afficher les PID des différents processus, on ajoute l'option ``-p``. Le processus racine du sytème est nommé ``systemd`` et a pour PID 1.
    
-   ![alt text](image-1.png)
+   ![alt text](img/image-1.png)
 2) On trouve le pid_shell à l'aide de la commande ``echo $$``
 3) On trouve bien une feuille avec pour PID pid_shell
 4) On affiche le sous-arbre enraciné en pid_shell à l'aide de la commande ``pstree ${pid_shell}``.
@@ -14,36 +14,36 @@
 8) On lance deux fois l'exécutable à l'aide de la commande ``./concurrence & ./concurrence``. On constate que deux processus sont créer dans l'arborescence, ils ont tous deux Shell 1 comme père.
 9)  Même chose, mais cette fois Shell 1 a trois fils identiques.
     
-    ![alt text](image.png)
+    ![alt text](img/image.png)
 10) On retrouve bien à l'aide de la commande ``ps j`` les deux processus liés à concurrence et d'après la colonne STAT, ils sont tous les deux endormis (S) (on constate par ailleurs que ps est en R)
     
-    ![alt text](image-2.png)
+    ![alt text](img/image-2.png)
 11) On constate en effet que l'ordonnancement mis en oeuvre par le noyau système n'est pas prévisible de notre point de vue
     
-    ![alt text](image-4.png)
-    ![alt text](image-3.png)
+    ![alt text](img/image-4.png)
+    ![alt text](img/image-3.png)
 
 ## Exercice 2
 
 Ma machine comporte 8 coeurs, on observe la consommation processeur à l'aide de htop. On constate que la mobilisation des coeurs est différentes pour plusieurs exécutions.
 
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
+![alt text](img/image-7.png)
 
 ## Exercice 3
 
 On cherche la commande fork dans le manuel à l'aide de la commande ``man fork``.
 
-![alt text](image-8.png)
-![alt text](image-9.png)
+![alt text](img/image-8.png)
+![alt text](img/image-9.png)
 
 ## Exercice 4
 
 1) La primitive fork peut échouer si jamais la limite de threads autorisée a été atteinte : la table des PCB est pleine et on peut plus générer un nouveau PID ou si l'allocation mémoire a échouée à cause d'une mémoire trop étroite.
 2) Après exécution on obtient l'arbre suivant :
    
-   ![alt text](image-10.png)
+   ![alt text](img/image-10.png)
 3) Ne pouvant pas prédire à l'avance le comportement de l'ordonnanceur du système, on ne peut pas savoir à l'avance si c'est le fils ou le père qui va se terminer en premier.
 4) On modifie le code en ajoutant la ligne :
    ```C
@@ -51,13 +51,13 @@ On cherche la commande fork dans le manuel à l'aide de la commande ``man fork``
    ```
 5) On obtient ainsi en sortie :  
 
-   ![alt text](image-12.png)
+   ![alt text](img/image-12.png)
 6) On a donc l'arbre suivant :
    
-   ![alt text](image-13.png)
+   ![alt text](img/image-13.png)
 7) On peut relancer l'exécution et on remarque que le processus lié à l'exécution du terminal n'a pas changé de PID (c'est normal, il est toujours en cours d'exécution) et que les PID des deux processus liés à l'exécution du fichier simple_fork sont nouveaux.
    
-   ![alt text](image-14.png)
+   ![alt text](img/image-14.png)
 8) Les processus ont bien disparus à l'issue de l'exécution du programme : le pstree enraciné en Shell 1 n'a plus de fils.
 
 ## Exercice 5
