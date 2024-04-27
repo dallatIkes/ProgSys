@@ -1,6 +1,6 @@
-#include "../../include/std.h"
-#include "../../include/prog_sys.h"
-#include "../../include/colors.h"
+#include <std.h>
+#include <prog_sys.h>
+#include <colors.h>
 
 int main()
 {

@@ -1,5 +1,5 @@
-#include "include/std.h"
-#include "include/prog_sys.h"
+#include <std.h>
+#include <prog_sys.h>
 
 void SIGINT_handler(int sig)
 {

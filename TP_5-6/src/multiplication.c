@@ -1,5 +1,6 @@
-#include "include/std.h"
-#include "include/prog_sys.h"
+#include <std.h>
+#include <prog_sys.h>
+#include <colors.h>
 
 void Solutiend(int);
 
@@ -35,11 +36,15 @@ int main(int argc, char *argv[])
             scanf("%d", &answer);
             if (answer == a * b)
             {
+                printf(GREEN);
                 printf("Bravo! \n");
+                printf(WHITE);
             }
             else
             {
+                printf(RED);
                 printf("Dommage, mauvaise réponse\n");
+                printf(WHITE);
             }
         }
         else
@@ -49,7 +54,9 @@ int main(int argc, char *argv[])
     }
     else
     {
+        printf(RED);
         printf("/!\\ Erreur : veuillez renseignez un unique paramètre /!\\ \n");
+        printf(WHITE);
     }
 
     return EXIT_SUCCESS;
