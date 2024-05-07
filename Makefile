@@ -5,8 +5,7 @@ newTP:
 	@mkdir $(TP)
 
 	@echo "=== Création des sous-répertoires src bin et doc"
-	@mkdir $(TP)/src $(TP)/bin $(TP)/doc
-	@cp -r ./utils/include $(TP)/src/
+	@mkdir $(TP)/src $(TP)/bin $(TP)/doc/
 
 	@echo "=== Création du fichier Markdown"
 	@touch $(TP)/doc/notes.md

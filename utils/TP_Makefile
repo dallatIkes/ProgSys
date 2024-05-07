@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall
+CFLAGS = -Wall -Wconversion -lrt -pthread
 INCLUDE = ../utils/include
 
 ./bin/$(bin) : ./src/$(src).c
