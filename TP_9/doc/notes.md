@@ -1,4 +1,9 @@
 # Séance 9 : Les processus légers (Threads)
+## Sommaire
+- [x] [Exercice 1](#exercice-1)
+- [ ] [Exercice 2](#exercice-2)
+- [ ] [Exercice 3](#exercice-3)
+- [ ] [Exercice 4](#exercice-4)
 ### Exercice 1 : Mise en oevre de multi-threading
 1) on crée un programme d'affichages espacés d'une semconde à l'aide de la primitive ``sleep`` 
     ```C

@@ -1,5 +1,18 @@
 # Séances 1 et 2 : La création de processus lourds
 
+## Sommaire
+- [x] [Exercice 1](#exercice-1)
+- [x] [Exercice 2](#exercice-2)
+- [x] [Exercice 3](#exercice-3)
+- [x] [Exercice 4](#exercice-4)
+- [x] [Exercice 5](#exercice-5)
+- [x] [Exercice 6](#exercice-6)
+- [x] [Exercice 7](#exercice-7)
+- [x] [Exercice 8](#exercice-8)
+- [x] [Exercice 9](#exercice-9)
+- [x] [Exercice 10](#exercice-10)
+- [x] [Exercice 11](#exercice-11)
+
 ## Exercice 1
 
 1) On affiche l'arbre des processus à l'aide de la commande ``pstree``, pour afficher les PID des différents processus, on ajoute l'option ``-p``. Le processus racine du sytème est nommé ``systemd`` et a pour PID 1.

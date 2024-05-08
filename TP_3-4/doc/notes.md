@@ -1,4 +1,21 @@
 # Séances 3 et 4 : La terminaison de processus lourds, le recouvrement de code et duplication de processus avec pointeurs
+## Sommaire
+- [x] [Exercice 1](#exercice-1)
+- [x] [Exercice 2](#exercice-2)
+- [x] [Exercice 3](#exercice-3)
+- [x] [Exercice 4](#exercice-4)
+- [x] [Exercice 5](#exercice-5)
+- [x] [Exercice 6](#exercice-6)
+- [x] [Exercice 7](#exercice-7)
+- [ ] [Exercice 8](#exercice-8)
+- [ ] [Exercice 9](#exercice-9)
+- [ ] [Exercice 10](#exercice-10)
+- [ ] [Exercice 11](#exercice-11)
+- [ ] [Exercice 12](#exercice-12)
+- [ ] [Exercice 13](#exercice-13)
+- [ ] [Exercice 14](#exercice-14)
+- [ ] [Exercice 15](#exercice-15)
+- [ ] [Exercice 16](#exercice-16)
 ### Exercice 1
 1) Sortie du programme :
 ```

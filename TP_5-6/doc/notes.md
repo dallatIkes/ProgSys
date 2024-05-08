@@ -1,4 +1,11 @@
 # Séances 5 et 6 : Les signaux
+## Sommaire
+- [x] [Exercice 1](#exercice-1)
+- [x] [Exercice 2](#exercice-2)
+- [x] [Exercice 3](#exercice-3)
+- [ ] [Exercice 4](#exercice-4)
+- [ ] [Exercice 5](#exercice-5)
+- [ ] [Exercice 6](#exercice-6)
 ### Exercice 1
 1) On écrit le code de notre timer :
    ```C

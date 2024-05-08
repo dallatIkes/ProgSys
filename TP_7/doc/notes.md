@@ -1,4 +1,12 @@
 # Séance 7 : Les tubes
+## Sommaire
+- [x] [Exercice 1](#exercice-1)
+- [x] [Exercice 2](#exercice-2)
+- [x] [Exercice 3](#exercice-3)
+- [ ] [Exercice 4](#exercice-4)
+- [ ] [Exercice 5](#exercice-5)
+- [ ] [Exercice 6](#exercice-6)
+- [ ] [Exercice 7](#exercice-7)
 ## Exercice 1
 On écrit le code suivant qui fonctionne correctement même lorsque le père attend avant le dédbut de son exécution.
 ```C
