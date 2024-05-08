@@ -22,13 +22,12 @@ I create a new directory for each new session we have with the same structure :
 │   ├── .gitignore
 │   └── notes.md
 ├── src/
-│   └── include/
 └── Makefile
 ```
 Generally what you're looking for are the source code in ``src/`` and the report in ``doc/``.  
 
 ## Headers
-In system programming, many libraries are necessary, and we always need to include the same header files. Thus, I created 3 header files regrouping them to simplify things : ``colors.h``, ``prog_sys.h`` and ``std.h``. Including them in your source file is like including any standard library, the Makefile will take care of finding them during the compilation.
+In system programming, many libraries are necessary, and we always need to include the same header files. Thus, I created 3 header files regrouping them to simplify things : ``colors.h``, ``prog_sys.h`` and ``std.h``. Including them in your source file is like including any standard library, the Makefile will take care of finding them in the ``utils`` directory during the compilation.
 ```C
 #include <colors.h>
 #include <prog_sys.h>
