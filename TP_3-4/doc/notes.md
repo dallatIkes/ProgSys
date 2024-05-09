@@ -9,7 +9,7 @@
 - [x] [Exercice 7](#exercice-7)
 - [x] [Exercice 8](#exercice-8)
 - [x] [Exercice 9](#exercice-9)
-- [ ] [Exercice 10](#exercice-10)
+- [x] [Exercice 10](#exercice-10)
 - [ ] [Exercice 11](#exercice-11)
 - [ ] [Exercice 12](#exercice-12)
 - [ ] [Exercice 13](#exercice-13)
@@ -469,3 +469,58 @@ Son but est de bloquer le processus père jusqu'à la terminaison d'un de ses fi
     sans surprise, ce recouvrement de code échoue vu que ce programme n'existe pas. Ainsi, le code écrit après (ici le ``perror``) n'est pas écrasé et s'exécute noramlement.
 
 ### Exercice 10
+Après la création d'un fils à l'aide de la primitive ``fork``, nous pouvons réaliser le recouvrement de code en utilisant l'une des quatres primitives suivantes :
+- ``execl`` : les arguments sont passés par liste et le chemin du binaire est précisé
+- ``execv`` les arguments sont passés par tableau et le chemin du binaire est précisé
+- ``execlp`` : les arguments sont passés par liste et le chemin du binaire n'est pas précisé
+- ``execvp`` : les arguments sont passés par tableau et le chemin du binaire n'est pas précisé
+```C
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
+        usage();
+    }
+    else
+    {
+        pid_t pidFils = -1;
+
+        pidFils = fork();
+
+        if (pidFils == 0)
+        {
+            switch (atoi(argv[1]))
+            {
+            case 1:
+                displayChoice("execl");
+                execl("/usr/bin/ls", "ls", "-l", "-h");
+                displayError();
+                break;
+            case 2:
+                displayChoice("execv");
+                char *arg_v[] = {"ls", "-l", "-h", (char *)NULL};
+                execv("/usr/bin/ls", arg_v);
+                displayError();
+                break;
+            case 3:
+                displayChoice("execlp");
+                execlp("ls", "ls", "-l", "-h");
+                displayError();
+                break;
+            case 4:
+                displayChoice("execvp");
+                char *arg_vp[] = {"ls", "-l", "-h", (char *)NULL};
+                execvp("ls", arg_vp);
+                displayError();
+                break;
+            default:
+                usage();
+                break;
+            }
+        }
+
+        wait(NULL);
+    }
+}
+```
+### Exercice 11
