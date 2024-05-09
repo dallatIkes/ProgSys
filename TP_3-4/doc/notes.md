@@ -7,8 +7,8 @@
 - [x] [Exercice 5](#exercice-5)
 - [x] [Exercice 6](#exercice-6)
 - [x] [Exercice 7](#exercice-7)
-- [ ] [Exercice 8](#exercice-8)
-- [ ] [Exercice 9](#exercice-9)
+- [x] [Exercice 8](#exercice-8)
+- [x] [Exercice 9](#exercice-9)
 - [ ] [Exercice 10](#exercice-10)
 - [ ] [Exercice 11](#exercice-11)
 - [ ] [Exercice 12](#exercice-12)
@@ -444,4 +444,28 @@ zsh(6026)───n_sons(11597)─┬─n_sons(11598)
                           └─n_sons(11617)
 ````
 ### Exercice 8
-Revoir le cours sur la primitive ``wait``.
+La primitive ``wait`` a la signature suivante :
+```C
+pid_t wait(int* status);
+```
+Son but est de bloquer le processus père jusqu'à la terminaison d'un de ses fils tout en renvoyant son PID. Si le processus n'a pas de fils, ``wait`` renvoie -1 et n'est pas bloquante. NB. Un appel de ``wait`` ne permet d'attendre qu'un seul fils (pas plus!) et ne permet d'attendre que des fils (donc pas un petit-fils!).
+
+### Exercice 9
+1) On compile et exécute le programme 25 et on observe l'arbre des processus dans un second terminal à l'aide de la primitive ``pstree``.  
+   Sortie :
+   ```
+   zsh(pid_shell)───unKilometre(106795)
+   ```
+2) On ajoute la ligne suivante à la fin de notre code :  
+   ```C
+   execlp("./bin/unKilometre", "unKilometre", (char *)NULL);
+   ```
+   On constate que cela génère une boucle infinie où le programme se relance à la fin de son exécution. De plus, on remarque que, contraiement à un fork qui crée un nouveau processus fils, il s'agit toujours du même processus.
+3) On effectue la même manipulation pour un programme qui n'existe pas :
+   ```C
+    execlp("./bin/unProgrammeQuiNExistePas", "unProgrammeQuiNExistePas", (char *)NULL);
+    perror("Erreur : le programme qui n'existe pas n'existe pas! \n");
+    ```
+    sans surprise, ce recouvrement de code échoue vu que ce programme n'existe pas. Ainsi, le code écrit après (ici le ``perror``) n'est pas écrasé et s'exécute noramlement.
+
+### Exercice 10
