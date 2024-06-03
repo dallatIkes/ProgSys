@@ -1,6 +1,6 @@
 # System Programming
 
-Welcome, thanks for using my system programming repository. Here I try to document every practival hands-on computer sessions. It may not be up to date, but I'm working on it...
+Welcome, thanks for using my system programming repository. Here I try to document every practical hands-on computer sessions. It may not be up to date, but I'm working on it...
 
 ## Table of contents
 1. [How does it work ?](#how-does-it-work)  
